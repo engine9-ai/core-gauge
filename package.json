@@ -1,0 +1,68 @@
+{
+  "name": "@engine9/core-gauge",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Gauge for engine9 core: web and app entries on the timeline, tied to person_id. A separate collector, a disk log, and an optional loader.",
+  "main": "lib/main.js",
+  "exports": {
+    ".": "./lib/main.js",
+    "./client": "./client/gauge.js",
+    "./cloudflare": "./lib/cloudflare.js",
+    "./collector": "./lib/collector.js",
+    "./diskLog": "./lib/diskLog.js",
+    "./entryTypes": "./lib/entryTypes.js",
+    "./gauge": "./gauge/index.js",
+    "./loader": "./lib/loader.js",
+    "./node": "./lib/node.js",
+    "./package.json": "./package.json",
+    "./privacy": "./lib/privacy.js",
+    "./protocol": "./lib/protocol.js",
+    "./server": "./client/server.js",
+    "./sessionize": "./lib/sessionize.js",
+    "./settings": "./lib/settings.js",
+    "./settingsDocs": "./lib/settingsDocs.js"
+  },
+  "bin": {
+    "e9gauge": "bin/e9gauge.js"
+  },
+  "files": [
+    "bin",
+    "client",
+    "cloudflare",
+    "docs",
+    "lib",
+    "gauge",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node --test --test-concurrency=1 test/*.test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "engine9": {
+    "pluginPackages": [
+      "@engine9/schemas",
+      "@engine9/core-gauge"
+    ]
+  },
+  "author": "engine9",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/engine9-ai/core-gauge.git"
+  },
+  "homepage": "https://github.com/engine9-ai/core-gauge#readme",
+  "peerDependencies": {
+    "@engine9/core": "^1.11.3",
+    "@engine9/schemas": "^1.11.3"
+  },
+  "devDependencies": {
+    "@engine9/core": "file:../core",
+    "@engine9/schemas": "file:../schemas",
+    "better-sqlite3": "^11.7.0",
+    "knex": "^3.1.0",
+    "mysql2": "^3.11.0"
+  }
+}

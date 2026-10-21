@@ -1,0 +1,49 @@
+# Gauge collector Worker. Copy to wrangler.toml, then:
+#   npx wrangler queues create gauge-hits
+#   npx wrangler r2 bucket create gauge-log          (optional archive)
+#   npx wrangler secret put SESSION_SECRET           (same value as the site)
+#   npx wrangler secret put GAUGE_SALT               (any long random string)
+#   npx wrangler deploy
+# Install the plugin into the site's database first (see docs/deploy.md).
+name = "gauge"
+main = "worker.js"
+compatibility_date = "2026-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Serve the collector on the site's own hostname so the device cookie and the
+# Core Session cookie are first-party. Replace with your zone and path.
+routes = [{ pattern = "www.example.com/g/*", zone_name = "example.com" }]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "engine9"
+database_id = "<same id as the site>"
+
+[[queues.producers]]
+binding = "GAUGE_QUEUE"
+queue = "gauge-hits"
+
+[[queues.consumers]]
+queue = "gauge-hits"
+max_batch_size = 100
+max_batch_timeout = 5
+max_retries = 5
+
+[[r2_buckets]]
+binding = "GAUGE_BUCKET"
+bucket_name = "gauge-log"
+
+# Retry email lookups for devices that were waiting on a person.
+[triggers]
+crons = ["*/10 * * * *"]
+
+[vars]
+GAUGE_BASE_PATH = "/g"   # matches the route above: the page posts to /g/collect
+# Optional: used until D1 answers, and when there is no DB binding.
+# GAUGE_SETTINGS = '{"streams":[{"id":"G-www","type":"web_stream","hosts":["www.example.com"]}]}'
+
+# wrangler aliases the site's plugin bundle, as for core's own Worker:
+# [alias]
+# "@engine9/core/plugins/site" = "./engine9.plugins.js"
+# [build]
+# command = "npx e9core build-plugins"
