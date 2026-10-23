@@ -26,7 +26,7 @@ for an empty database you want fully set up.
 npm install @engine9/core @engine9/schemas @engine9/core-gauge
 ```
 
-Gauge needs `@engine9/core` and `@engine9/schemas` **1.11.3 or later**.
+Gauge needs `@engine9/core` **1.13.1 or later** and `@engine9/schemas` **1.11.3 or later**.
 `e9gauge install` and `e9gauge doctor` check the installed versions and stop
 with the upgrade steps when one is older.
 

@@ -184,7 +184,7 @@ the wrong id.
 npm install @engine9/core @engine9/schemas @engine9/core-gauge
 ```
 
-Gauge needs `@engine9/core` and `@engine9/schemas` **1.11.3 or later**. A site
+Gauge needs `@engine9/core` **1.13.1 or later** and `@engine9/schemas` **1.11.3 or later**. A site
 on an older core must upgrade those packages first; `e9gauge install` and
 `e9gauge doctor` say so when one is older.
 
