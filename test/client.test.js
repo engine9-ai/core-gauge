@@ -149,7 +149,7 @@ test('consent(false) rides with the batch so the collector goes cookieless', asy
 
 test('a client cannot mint a transaction or claim a person', async () => {
   const { gauge, log } = setup();
-  gauge.event('DONATION', { value: 100 });
+  gauge.event('TRANSACTION', { value: 100 });
   gauge.event('PAGE_VIEW', { person_id: 7, email: 'a@b.com' });
   await gauge.flush();
   assert.equal(log.records.length, 1);

@@ -5,7 +5,7 @@ views, sign-ins, downloads, and the actions that matter to you, such as
 `video_upload` or `start_application`. It stores the counts in your own engine9
 database instead of a third party's. When a visitor is someone you already
 know, Gauge records their activity on that person's engine9 timeline, next to
-their donations, emails and form submissions.
+their transactions, emails and form submissions.
 
 Think of it as the measurement half of Google Analytics 4. The data stays in
 your database, and it is tied to `person_id`. Gauge stops at measurement.

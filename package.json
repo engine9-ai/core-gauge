@@ -1,6 +1,6 @@
 {
   "name": "@engine9/core-gauge",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "type": "module",
   "description": "Gauge for engine9 core: web and app entries on the timeline, tied to person_id. A separate collector, a disk log, and an optional loader.",
   "main": "lib/main.js",
@@ -60,8 +60,8 @@
     "access": "public"
   },
   "peerDependencies": {
-    "@engine9/core": "^1.13.1",
-    "@engine9/schemas": "^1.11.3"
+    "@engine9/core": "^1.15.2",
+    "@engine9/schemas": "^1.11.4"
   },
   "devDependencies": {
     "@engine9/core": "file:../core",
