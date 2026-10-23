@@ -1,6 +1,6 @@
 {
   "name": "@engine9/core-gauge",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "type": "module",
   "description": "Gauge for engine9 core: web and app entries on the timeline, tied to person_id. A separate collector, a disk log, and an optional loader.",
   "main": "lib/main.js",

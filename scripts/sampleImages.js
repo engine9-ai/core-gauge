@@ -427,8 +427,8 @@ function sessionsImage(run) {
   return svg.render();
 }
 
-function acquisitionImage(run) {
-  const svg = new Svg('Acquisition');
+function referralsImage(run) {
+  const svg = new Svg('Referrals');
   const full = { x0: 28, x1: 932, barX: 328, barW: 190, valueX: 580 };
   const ref = get(run, 'by_referrer');
   const referrers = ref.slice(0, 6);
@@ -543,7 +543,7 @@ async function main() {
     }
 
     const runs = {};
-    for (const key of ['traffic', 'sessions', 'acquisition', 'pages', 'outbound', 'activity', 'custom_entries']) {
+    for (const key of ['traffic', 'sessions', 'referrals', 'pages', 'outbound', 'activity', 'custom_entries']) {
       runs[key] = await runReport(worker, key);
     }
     const custom = {
@@ -555,7 +555,7 @@ async function main() {
     const images = {
       traffic: trafficImage(runs.traffic),
       sessions: sessionsImage(runs.sessions),
-      acquisition: acquisitionImage(runs.acquisition),
+      referrals: referralsImage(runs.referrals),
       pages: pagesImage(runs.pages),
       outbound: outboundImage(runs.outbound),
       activity: activityImage(runs.activity, custom)
@@ -568,7 +568,7 @@ async function main() {
       records: records.length,
       traffic: { visitors: t.visitors, sessions: t.sessions, views: t.views, visitor_days: t.visitor_days, views_per_visitor_day: t.views_per_visitor_day, days: t.days, known_people: t.known_people },
       sessions: { bounce_rate: s.bounce_rate, views_per_session: s.views_per_session, avg_duration: s.avg_duration, browsers: s.by_browser.length },
-      acquisition: runs.acquisition.data.by_campaign.slice(0, 5),
+      referrals: runs.referrals.data.by_campaign.slice(0, 5),
       pages_top: runs.pages.data.top_views.slice(0, 3),
       outbound: runs.outbound.data.top_hosts.slice(0, 3),
       activity: runs.activity.data.by_type,

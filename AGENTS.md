@@ -97,6 +97,11 @@ through `schemaFeatures` in `lib/loader.js` and is skipped while missing.
 D1 truncate integer division, so a ratio of a 0/1 column is `avg(column)`. The
 reports test fails on `/`.
 
+**Plain vocabulary.** Do not use the word that marketing tools use for where
+visits came from, in code, reports, docs, images or file names. It is domain
+specific and engine9 core does not use it. The report is **Referrals**
+(`referrals`). `test/vocabulary.test.js` fails if the word returns.
+
 **Two different "sessions".** Prose says "gauge session" for a run of activity
 (`gauge_session`, ended by `session_timeout_minutes`) and "Core Session" for the
 login token (`verifySessionToken`, `SESSION_SECRET`). Never write bare "session"

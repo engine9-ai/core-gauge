@@ -1,6 +1,6 @@
 // Where sessions came from: referring site and utm parameters.
 export default {
-  name: 'Acquisition',
+  name: 'Referrals',
   description: 'Sessions and visitors by referring site, utm source, medium and campaign.',
   tags: ['Gauge'],
   data_sources: {

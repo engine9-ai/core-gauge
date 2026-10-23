@@ -70,13 +70,13 @@ one page (the bounce rate), and the split by device, browser and country.
 
 ![Sessions report: 35.8% bounce rate, 2.38 views per session, 189 seconds per session, by device, by browser and by country](docs/images/sessions.svg)
 
-**Acquisition** (`acquisition`). Where visits came from: the referring site,
+**Referrals** (`referrals`). Where visits came from: the referring site,
 and the `utm_source`, `utm_medium` and `utm_campaign` on the link. Known people
 shows how many of those visitors you could name. For example, 11 of the 163
 visitors from the paid social campaign are people the site knows, because they
 signed up or signed in.
 
-![Acquisition report: referring sites and campaigns, with sessions, visitors, known people and bounce rate](docs/images/acquisition.svg)
+![Referrals report: referring sites and campaigns, with sessions, visitors, known people and bounce rate](docs/images/referrals.svg)
 
 **Pages** (`pages`). The most viewed pages and screens. Entrances counts the
 sessions that started on the page. A page with views but no entrances, like
@@ -92,7 +92,7 @@ destination host and per day.
 **Activity** and **Custom entries** (`activity`, `custom_entries`). These
 two reports read the timeline, so they count people Gauge could identify. Page
 views are left off the timeline by default (see `timeline_entry_types`), which
-keeps it small. Traffic, Sessions, Acquisition and Pages count every visitor.
+keeps it small. Traffic, Sessions, Referrals, Pages and Outbound clicks count every visitor.
 
 ![Known-person activity by entry type, and 177 video uploads by 114 people](docs/images/activity.svg)
 
@@ -311,7 +311,7 @@ that do not match a person yet are retried on every load.
 | Who visited | segment clause `visitedRecently`, or `SESSION_START` timeline entries for known people |
 | Who logged in | `LOGIN` timeline entries; report `activity` |
 | Who uploaded videos | segment clause `didCustomEntry` with name `video_upload`; report `custom_entries` |
-| Where they came from | reports `acquisition` and `sessions` |
+| Where they came from | reports `referrals` and `sessions` |
 | Which pages | report `pages` |
 | Which links to other sites they clicked | report `outbound` |
 

@@ -24,7 +24,7 @@ function identifiers(eql) {
 }
 
 test('every report is exported on the plugin, keyed, and well formed', () => {
-  assert.deepEqual(Object.keys(reports).sort(), ['acquisition', 'activity', 'custom_entries', 'outbound', 'pages', 'sessions', 'traffic']);
+  assert.deepEqual(Object.keys(reports).sort(), ['activity', 'custom_entries', 'outbound', 'pages', 'referrals', 'sessions', 'traffic']);
   assert.equal(gauge.reports, reports, 'default.reports is what core compiles');
   for (const [key, report] of Object.entries(reports)) {
     assert.ok(report.name && report.description, `${key} needs a name and description`);
