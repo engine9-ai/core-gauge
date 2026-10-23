@@ -21,7 +21,7 @@ export const settings = [
     default: '[]',
     section: 'Collection',
     description:
-      'Data streams, one per site or app: [{"id":"G-www","name":"www.example.com","type":"web_stream","hosts":["www.example.com"]}]. type is web_stream, app_stream or server_stream. The id is public (like a GA4 Measurement ID) and is what the page or app sends. Each stream becomes one engine9 input.'
+      'Data streams, one per site or app: [{"id":"G-www","name":"www.example.com","type":"web_stream","hosts":["www.example.com"]}]. type is web_stream, app_stream or server_stream. "hash_routes":true keeps a #/ or #!/ fragment on the path for a hash-routed site (other fragments are always dropped); default false. The id is public (like a GA4 Measurement ID) and is what the page or app sends. Each stream becomes one engine9 input.'
   },
   {
     name: 'allowed_hosts',

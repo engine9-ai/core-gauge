@@ -1,7 +1,62 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="472" viewBox="0 0 960 472" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
-<rect width="960" height="472" rx="12" fill="#ffffff" stroke="#e5e7eb"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="476" viewBox="0 0 960 476" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+<rect width="960" height="476" rx="12" fill="#ffffff" stroke="#e5e7eb"/>
 <text x="28" y="40" font-size="20" fill="#111827" font-weight="600" text-anchor="start">Pages and screens</text>
 <text x="28" y="62" font-size="13" fill="#6b7280" font-weight="400" text-anchor="start">www.example.org · Sep 21 – Oct 20, 2026</text>
 <text x="932" y="40" font-size="11" fill="#6b7280" font-weight="400" text-anchor="end">sample data</text>
-<text x="28" y="104" font-size="14" fill="#111827" font-weight="600" text-anchor="start">Top pages</text><line x1="28" x2="932" y1="118" y2="118" stroke="#e5e7eb"/><text x="28" y="136" font-size="11" fill="#6b7280" font-weight="600" text-anchor="start">Page</text><text x="358" y="136" font-size="11" fill="#6b7280" font-weight="600" text-anchor="start">Views</text><text x="924" y="136" font-size="11" fill="#6b7280" font-weight="600" text-anchor="end">Entrances (landed here)</text><line x1="28" x2="932" y1="144" y2="144" stroke="#e5e7eb"/><text x="28" y="164" font-size="12" fill="#111827" font-weight="400" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">/</text><rect x="358" y="153" width="330" height="12" rx="3" fill="#c7d2fe"/><text x="750" y="164" font-size="12" fill="#111827" font-weight="400" text-anchor="end">2,870</text><text x="924" y="164" font-size="12" fill="#111827" font-weight="400" text-anchor="end">2,577</text><line x1="28" x2="932" y1="174" y2="174" stroke="#e5e7eb"/><text x="28" y="194" font-size="12" fill="#111827" font-weight="400" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">/features</text><rect x="358" y="183" width="238.2439024390244" height="12" rx="3" fill="#c7d2fe"/><text x="750" y="194" font-size="12" fill="#111827" font-weight="400" text-anchor="end">2,072</text><text x="924" y="194" font-size="12" fill="#111827" font-weight="400" text-anchor="end">560</text><line x1="28" x2="932" y1="204" y2="204" stroke="#e5e7eb"/><text x="28" y="224" font-size="12" fill="#111827" font-weight="400" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">/pricing</text><rect x="358" y="213" width="220.0766550522648" height="12" rx="3" fill="#c7d2fe"/><text x="750" y="224" font-size="12" fill="#111827" font-weight="400" text-anchor="end">1,914</text><text x="924" y="224" font-size="12" fill="#111827" font-weight="400" text-anchor="end">337</text><line x1="28" x2="932" y1="234" y2="234" stroke="#e5e7eb"/><text x="28" y="254" font-size="12" fill="#111827" font-weight="400" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">/blog/measure-what-matters</text><rect x="358" y="243" width="111.30313588850174" height="12" rx="3" fill="#c7d2fe"/><text x="750" y="254" font-size="12" fill="#111827" font-weight="400" text-anchor="end">968</text><text x="924" y="254" font-size="12" fill="#111827" font-weight="400" text-anchor="end">441</text><line x1="28" x2="932" y1="264" y2="264" stroke="#e5e7eb"/><text x="28" y="284" font-size="12" fill="#111827" font-weight="400" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">/account/videos</text><rect x="358" y="273" width="84.28222996515679" height="12" rx="3" fill="#c7d2fe"/><text x="750" y="284" font-size="12" fill="#111827" font-weight="400" text-anchor="end">733</text><text x="924" y="284" font-size="12" fill="#111827" font-weight="400" text-anchor="end">0</text><line x1="28" x2="932" y1="294" y2="294" stroke="#e5e7eb"/><text x="28" y="314" font-size="12" fill="#111827" font-weight="400" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">/account</text><rect x="358" y="303" width="74.50871080139373" height="12" rx="3" fill="#c7d2fe"/><text x="750" y="314" font-size="12" fill="#111827" font-weight="400" text-anchor="end">648</text><text x="924" y="314" font-size="12" fill="#111827" font-weight="400" text-anchor="end">343</text><line x1="28" x2="932" y1="324" y2="324" stroke="#e5e7eb"/><text x="28" y="344" font-size="12" fill="#111827" font-weight="400" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">/blog/october-update</text><rect x="358" y="333" width="70.25435540069687" height="12" rx="3" fill="#c7d2fe"/><text x="750" y="344" font-size="12" fill="#111827" font-weight="400" text-anchor="end">611</text><text x="924" y="344" font-size="12" fill="#111827" font-weight="400" text-anchor="end">611</text><line x1="28" x2="932" y1="354" y2="354" stroke="#e5e7eb"/><text x="28" y="374" font-size="12" fill="#111827" font-weight="400" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">/docs/getting-started</text><rect x="358" y="363" width="67.72473867595819" height="12" rx="3" fill="#c7d2fe"/><text x="750" y="374" font-size="12" fill="#111827" font-weight="400" text-anchor="end">589</text><text x="924" y="374" font-size="12" fill="#111827" font-weight="400" text-anchor="end">0</text><line x1="28" x2="932" y1="384" y2="384" stroke="#e5e7eb"/><text x="28" y="404" font-size="12" fill="#111827" font-weight="400" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">/docs/uploading-video</text><rect x="358" y="393" width="64.39024390243902" height="12" rx="3" fill="#c7d2fe"/><text x="750" y="404" font-size="12" fill="#111827" font-weight="400" text-anchor="end">560</text><text x="924" y="404" font-size="12" fill="#111827" font-weight="400" text-anchor="end">0</text><line x1="28" x2="932" y1="414" y2="414" stroke="#e5e7eb"/><text x="28" y="434" font-size="12" fill="#111827" font-weight="400" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">/signup</text><rect x="358" y="423" width="61.05574912891986" height="12" rx="3" fill="#c7d2fe"/><text x="750" y="434" font-size="12" fill="#111827" font-weight="400" text-anchor="end">531</text><text x="924" y="434" font-size="12" fill="#111827" font-weight="400" text-anchor="end">0</text>
+<text x="28" y="104" font-size="14" fill="#111827" font-weight="600" text-anchor="start">Top pages</text>
+<line x1="28" x2="932" y1="118" y2="118" stroke="#e5e7eb"/>
+<text x="28" y="136" font-size="11" fill="#6b7280" font-weight="600" text-anchor="start">Page</text>
+<text x="358" y="136" font-size="11" fill="#6b7280" font-weight="600" text-anchor="start">Views</text>
+<text x="924" y="136" font-size="11" fill="#6b7280" font-weight="600" text-anchor="end">Entrances (landed here)</text>
+<line x1="28" x2="932" y1="144" y2="144" stroke="#e5e7eb"/>
+<text x="28" y="164" font-size="12" fill="#111827" font-weight="400" text-anchor="start">/</text>
+<rect x="358" y="153" width="330" height="12" rx="3" fill="#c7d2fe"/>
+<text x="750" y="164" font-size="12" fill="#111827" font-weight="400" text-anchor="end">5,306</text>
+<text x="924" y="164" font-size="12" fill="#111827" font-weight="400" text-anchor="end">3,089</text>
+<line x1="28" x2="932" y1="174" y2="174" stroke="#e5e7eb"/>
+<text x="28" y="194" font-size="12" fill="#111827" font-weight="400" text-anchor="start">/features</text>
+<rect x="358" y="183" width="115.86694308330193" height="12" rx="3" fill="#c7d2fe"/>
+<text x="750" y="194" font-size="12" fill="#111827" font-weight="400" text-anchor="end">1,863</text>
+<text x="924" y="194" font-size="12" fill="#111827" font-weight="400" text-anchor="end">479</text>
+<line x1="28" x2="932" y1="204" y2="204" stroke="#e5e7eb"/>
+<text x="28" y="224" font-size="12" fill="#111827" font-weight="400" text-anchor="start">/pricing</text>
+<rect x="358" y="213" width="91.61138333961554" height="12" rx="3" fill="#c7d2fe"/>
+<text x="750" y="224" font-size="12" fill="#111827" font-weight="400" text-anchor="end">1,473</text>
+<text x="924" y="224" font-size="12" fill="#111827" font-weight="400" text-anchor="end">340</text>
+<line x1="28" x2="932" y1="234" y2="234" stroke="#e5e7eb"/>
+<text x="28" y="254" font-size="12" fill="#111827" font-weight="400" text-anchor="start">/account</text>
+<rect x="358" y="243" width="74.50810403317" height="12" rx="3" fill="#c7d2fe"/>
+<text x="750" y="254" font-size="12" fill="#111827" font-weight="400" text-anchor="end">1,198</text>
+<text x="924" y="254" font-size="12" fill="#111827" font-weight="400" text-anchor="end">632</text>
+<line x1="28" x2="932" y1="264" y2="264" stroke="#e5e7eb"/>
+<text x="28" y="284" font-size="12" fill="#111827" font-weight="400" text-anchor="start">/blog/measure-what-matters</text>
+<rect x="358" y="273" width="57.342630983791935" height="12" rx="3" fill="#c7d2fe"/>
+<text x="750" y="284" font-size="12" fill="#111827" font-weight="400" text-anchor="end">922</text>
+<text x="924" y="284" font-size="12" fill="#111827" font-weight="400" text-anchor="end">305</text>
+<line x1="28" x2="932" y1="294" y2="294" stroke="#e5e7eb"/>
+<text x="28" y="314" font-size="12" fill="#111827" font-weight="400" text-anchor="start">/docs/getting-started</text>
+<rect x="358" y="303" width="37.067470787787414" height="12" rx="3" fill="#c7d2fe"/>
+<text x="750" y="314" font-size="12" fill="#111827" font-weight="400" text-anchor="end">596</text>
+<text x="924" y="314" font-size="12" fill="#111827" font-weight="400" text-anchor="end">190</text>
+<line x1="28" x2="932" y1="324" y2="324" stroke="#e5e7eb"/>
+<text x="28" y="344" font-size="12" fill="#111827" font-weight="400" text-anchor="start">/signup</text>
+<rect x="358" y="333" width="37.00527704485488" height="12" rx="3" fill="#c7d2fe"/>
+<text x="750" y="344" font-size="12" fill="#111827" font-weight="400" text-anchor="end">595</text>
+<text x="924" y="344" font-size="12" fill="#111827" font-weight="400" text-anchor="end">241</text>
+<line x1="28" x2="932" y1="354" y2="354" stroke="#e5e7eb"/>
+<text x="28" y="374" font-size="12" fill="#111827" font-weight="400" text-anchor="start">/blog/october-update</text>
+<rect x="358" y="363" width="34.08217112702601" height="12" rx="3" fill="#c7d2fe"/>
+<text x="750" y="374" font-size="12" fill="#111827" font-weight="400" text-anchor="end">548</text>
+<text x="924" y="374" font-size="12" fill="#111827" font-weight="400" text-anchor="end">346</text>
+<line x1="28" x2="932" y1="384" y2="384" stroke="#e5e7eb"/>
+<text x="28" y="404" font-size="12" fill="#111827" font-weight="400" text-anchor="start">/account/videos</text>
+<rect x="358" y="393" width="31.905390124387484" height="12" rx="3" fill="#c7d2fe"/>
+<text x="750" y="404" font-size="12" fill="#111827" font-weight="400" text-anchor="end">513</text>
+<text x="924" y="404" font-size="12" fill="#111827" font-weight="400" text-anchor="end">0</text>
+<line x1="28" x2="932" y1="414" y2="414" stroke="#e5e7eb"/>
+<text x="28" y="434" font-size="12" fill="#111827" font-weight="400" text-anchor="start">/docs/uploading-video</text>
+<rect x="358" y="423" width="22.20316622691293" height="12" rx="3" fill="#c7d2fe"/>
+<text x="750" y="434" font-size="12" fill="#111827" font-weight="400" text-anchor="end">357</text>
+<text x="924" y="434" font-size="12" fill="#111827" font-weight="400" text-anchor="end">0</text>
+<line x1="28" x2="932" y1="444" y2="444" stroke="#e5e7eb"/>
 </svg>

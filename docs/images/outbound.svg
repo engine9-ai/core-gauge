@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="604" viewBox="0 0 960 604" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+<rect width="960" height="604" rx="12" fill="#ffffff" stroke="#e5e7eb"/>
+<text x="28" y="40" font-size="20" fill="#111827" font-weight="600" text-anchor="start">Outbound clicks</text>
+<text x="28" y="62" font-size="13" fill="#6b7280" font-weight="400" text-anchor="start">www.example.org · Sep 21 – Oct 20, 2026</text>
+<text x="932" y="40" font-size="11" fill="#6b7280" font-weight="400" text-anchor="end">sample data</text>
+<text x="28" y="104" font-size="14" fill="#111827" font-weight="600" text-anchor="start">Destinations</text>
+<line x1="28" x2="932" y1="118" y2="118" stroke="#e5e7eb"/>
+<text x="28" y="136" font-size="11" fill="#6b7280" font-weight="600" text-anchor="start">Destination host</text>
+<text x="358" y="136" font-size="11" fill="#6b7280" font-weight="600" text-anchor="start">Clicks</text>
+<text x="924" y="136" font-size="11" fill="#6b7280" font-weight="600" text-anchor="end">Share of clicks</text>
+<line x1="28" x2="932" y1="144" y2="144" stroke="#e5e7eb"/>
+<text x="28" y="164" font-size="12" fill="#111827" font-weight="400" text-anchor="start">shop.example.net</text>
+<rect x="358" y="153" width="330" height="12" rx="3" fill="#c7d2fe"/>
+<text x="750" y="164" font-size="12" fill="#111827" font-weight="400" text-anchor="end">225</text>
+<text x="924" y="164" font-size="12" fill="#111827" font-weight="400" text-anchor="end">43.5%</text>
+<line x1="28" x2="932" y1="174" y2="174" stroke="#e5e7eb"/>
+<text x="28" y="194" font-size="12" fill="#111827" font-weight="400" text-anchor="start">instagram.com</text>
+<rect x="358" y="183" width="159.86666666666667" height="12" rx="3" fill="#c7d2fe"/>
+<text x="750" y="194" font-size="12" fill="#111827" font-weight="400" text-anchor="end">109</text>
+<text x="924" y="194" font-size="12" fill="#111827" font-weight="400" text-anchor="end">21.1%</text>
+<line x1="28" x2="932" y1="204" y2="204" stroke="#e5e7eb"/>
+<text x="28" y="224" font-size="12" fill="#111827" font-weight="400" text-anchor="start">github.com</text>
+<rect x="358" y="213" width="115.86666666666666" height="12" rx="3" fill="#c7d2fe"/>
+<text x="750" y="224" font-size="12" fill="#111827" font-weight="400" text-anchor="end">79</text>
+<text x="924" y="224" font-size="12" fill="#111827" font-weight="400" text-anchor="end">15.3%</text>
+<line x1="28" x2="932" y1="234" y2="234" stroke="#e5e7eb"/>
+<text x="28" y="254" font-size="12" fill="#111827" font-weight="400" text-anchor="start">partner.example</text>
+<rect x="358" y="243" width="92.4" height="12" rx="3" fill="#c7d2fe"/>
+<text x="750" y="254" font-size="12" fill="#111827" font-weight="400" text-anchor="end">63</text>
+<text x="924" y="254" font-size="12" fill="#111827" font-weight="400" text-anchor="end">12.2%</text>
+<line x1="28" x2="932" y1="264" y2="264" stroke="#e5e7eb"/>
+<text x="28" y="284" font-size="12" fill="#111827" font-weight="400" text-anchor="start">video.example.com</text>
+<rect x="358" y="273" width="60.13333333333333" height="12" rx="3" fill="#c7d2fe"/>
+<text x="750" y="284" font-size="12" fill="#111827" font-weight="400" text-anchor="end">41</text>
+<text x="924" y="284" font-size="12" fill="#111827" font-weight="400" text-anchor="end">7.9%</text>
+<line x1="28" x2="932" y1="294" y2="294" stroke="#e5e7eb"/>
+<line x1="64" x2="896" y1="564" y2="564" stroke="#e5e7eb"/>
+<text x="56" y="568" font-size="10" fill="#6b7280" font-weight="400" text-anchor="end">0</text>
+<line x1="64" x2="896" y1="514" y2="514" stroke="#e5e7eb"/>
+<text x="56" y="518" font-size="10" fill="#6b7280" font-weight="400" text-anchor="end">20</text>
+<line x1="64" x2="896" y1="464" y2="464" stroke="#e5e7eb"/>
+<text x="56" y="468" font-size="10" fill="#6b7280" font-weight="400" text-anchor="end">40</text>
+<line x1="64" x2="896" y1="414" y2="414" stroke="#e5e7eb"/>
+<text x="56" y="418" font-size="10" fill="#6b7280" font-weight="400" text-anchor="end">60</text>
+<line x1="64" x2="896" y1="364" y2="364" stroke="#e5e7eb"/>
+<text x="56" y="368" font-size="10" fill="#6b7280" font-weight="400" text-anchor="end">80</text>
+<rect x="69.26933333333334" y="554" width="17.194666666666667" height="10" rx="2" fill="#c7d2fe"/>
+<text x="77.86666666666667" y="582" font-size="10" fill="#6b7280" font-weight="400" text-anchor="middle">Sep 21</text>
+<rect x="97.00266666666667" y="544" width="17.194666666666667" height="20" rx="2" fill="#c7d2fe"/>
+<rect x="124.736" y="559" width="17.194666666666667" height="5" rx="2" fill="#c7d2fe"/>
+<rect x="152.4693333333333" y="551.5" width="17.194666666666667" height="12.5" rx="2" fill="#c7d2fe"/>
+<rect x="180.20266666666666" y="544" width="17.194666666666667" height="20" rx="2" fill="#c7d2fe"/>
+<rect x="207.936" y="549" width="17.194666666666667" height="15" rx="2" fill="#c7d2fe"/>
+<text x="216.53333333333336" y="582" font-size="10" fill="#6b7280" font-weight="400" text-anchor="middle">Sep 26</text>
+<rect x="235.66933333333333" y="551.5" width="17.194666666666667" height="12.5" rx="2" fill="#c7d2fe"/>
+<rect x="263.4026666666667" y="539" width="17.194666666666667" height="25" rx="2" fill="#c7d2fe"/>
+<rect x="291.136" y="524" width="17.194666666666667" height="40" rx="2" fill="#c7d2fe"/>
+<rect x="318.8693333333334" y="526.5" width="17.194666666666667" height="37.5" rx="2" fill="#c7d2fe"/>
+<rect x="346.6026666666667" y="529" width="17.194666666666667" height="35" rx="2" fill="#c7d2fe"/>
+<text x="355.20000000000005" y="582" font-size="10" fill="#6b7280" font-weight="400" text-anchor="middle">Oct 1</text>
+<rect x="374.336" y="539" width="17.194666666666667" height="25" rx="2" fill="#c7d2fe"/>
+<rect x="402.06933333333336" y="529" width="17.194666666666667" height="35" rx="2" fill="#c7d2fe"/>
+<rect x="429.8026666666667" y="539" width="17.194666666666667" height="25" rx="2" fill="#c7d2fe"/>
+<rect x="457.536" y="519" width="17.194666666666667" height="45" rx="2" fill="#c7d2fe"/>
+<rect x="485.26933333333335" y="526.5" width="17.194666666666667" height="37.5" rx="2" fill="#c7d2fe"/>
+<text x="493.8666666666667" y="582" font-size="10" fill="#6b7280" font-weight="400" text-anchor="middle">Oct 6</text>
+<rect x="513.0026666666666" y="529" width="17.194666666666667" height="35" rx="2" fill="#c7d2fe"/>
+<rect x="540.736" y="519" width="17.194666666666667" height="45" rx="2" fill="#c7d2fe"/>
+<rect x="568.4693333333333" y="404" width="17.194666666666667" height="160" rx="2" fill="#c7d2fe"/>
+<rect x="596.2026666666667" y="484" width="17.194666666666667" height="80" rx="2" fill="#c7d2fe"/>
+<rect x="623.936" y="511.5" width="17.194666666666667" height="52.5" rx="2" fill="#c7d2fe"/>
+<text x="632.5333333333334" y="582" font-size="10" fill="#6b7280" font-weight="400" text-anchor="middle">Oct 11</text>
+<rect x="651.6693333333333" y="514" width="17.194666666666667" height="50" rx="2" fill="#c7d2fe"/>
+<rect x="679.4026666666666" y="516.5" width="17.194666666666667" height="47.5" rx="2" fill="#c7d2fe"/>
+<rect x="707.136" y="494" width="17.194666666666667" height="70" rx="2" fill="#c7d2fe"/>
+<rect x="734.8693333333333" y="506.5" width="17.194666666666667" height="57.49999999999999" rx="2" fill="#c7d2fe"/>
+<rect x="762.6026666666667" y="491.5" width="17.194666666666667" height="72.5" rx="2" fill="#c7d2fe"/>
+<text x="771.2" y="582" font-size="10" fill="#6b7280" font-weight="400" text-anchor="middle">Oct 16</text>
+<rect x="790.336" y="506.5" width="17.194666666666667" height="57.49999999999999" rx="2" fill="#c7d2fe"/>
+<rect x="818.0693333333334" y="511.5" width="17.194666666666667" height="52.5" rx="2" fill="#c7d2fe"/>
+<rect x="845.8026666666666" y="511.5" width="17.194666666666667" height="52.5" rx="2" fill="#c7d2fe"/>
+<rect x="873.536" y="504" width="17.194666666666667" height="60" rx="2" fill="#c7d2fe"/>
+<rect x="64" y="338" width="12" height="12" rx="2" fill="#c7d2fe"/>
+<text x="82" y="348" font-size="12" fill="#6b7280" font-weight="400" text-anchor="start">Clicks per day</text>
+</svg>

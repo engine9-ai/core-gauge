@@ -109,6 +109,7 @@ export const tables = [
       utm_campaign: 'string',
       country: 'string',
       device_class: 'string',
+      browser: 'string',
       is_new_device: 'boolean',
       bounced: 'boolean',
       duration_s: 'int',
@@ -159,6 +160,23 @@ export const tables = [
     indexes: [
       { columns: 'id', primary: true },
       { columns: ['date', 'input_id', 'view_name'], unique: true }
+    ]
+  },
+  {
+    // Clicks on links to other sites, per destination host per day.
+    name: 'gauge_outbound_day',
+    columns: {
+      id: 'id',
+      date: 'date',
+      input_id: 'uuid',
+      link_host: 'id_string', // host of the link clicked (max 128)
+      clicks: 'int',
+      created_at: 'created_at',
+      modified_at: 'modified_at'
+    },
+    indexes: [
+      { columns: 'id', primary: true },
+      { columns: ['date', 'input_id', 'link_host'], unique: true }
     ]
   }
 ];

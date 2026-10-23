@@ -26,7 +26,10 @@ half). It is not analytics: no modeling, no attribution. Read
   `engine9.pluginPackages`. `gauge/index.js` is therefore the **only**
   `index.js` in this package, and there are no `*.plugin.js` files. Everything
   else (`lib/`, `client/`, `bin/`) is reached through `package.json` `exports`.
-  Do not add another `index.js` directory.
+  Do not add another `index.js` directory. `exports` must include `./gauge`
+  and `./gauge/*`: `e9core build-plugins` imports
+  `@engine9/core-gauge/gauge/index.js`, `schema.js` and `settings.js` when those
+  paths are exported (core 1.13+ can fall back to `./gauge` alone).
 - The plugin path is `@engine9/core-gauge/gauge`. Plugin paths match exactly: no
   alias spellings.
 
@@ -55,15 +58,38 @@ cached (60 s) server-key check for `/send` and `/identify`.
 **The log is the record of truth, and loading is at least once.** Timeline and
 `gauge_entry` rows are keyed by hit id and idempotent. Rollup counters can
 double-count after a crash between the database write and the checkpoint;
-`e9gauge replay` is the fix, and `resetFrom` must keep rebuilding exactly what
-the loader derives. A change to what the loader derives needs a matching change
-to `resetFrom`.
+`e9gauge reloadStats` is the fix (there is no `replay` command or alias), and
+`resetFrom` must keep rebuilding exactly what the loader derives. A change to
+what the loader derives needs a matching change to `resetFrom`. A reload loads
+only hits stamped on or after its date (`recordsOnOrAfter`). On Cloudflare,
+reloadStats reads the R2 archive (`POST /admin/reloadStats`, one step per
+request); a Queue-only deployment cannot rebuild. The archive is one object per
+Queue message, keyed by message id, so a retried delivery overwrites instead of
+adding a copy. Keep it that way.
+
+**Fragments are dropped unless the stream says otherwise.** A `#/` route is
+kept only for a stream with `hash_routes: true`. The client's `hashRoutes`
+option alone does not store fragments.
+
+**One Queue message per request, not per hit.** Queues charge and limit by
+message (three operations per 64 KB). Workers Free is 10,000 operations/day.
+`queueLog` packs a request's records into `{ v: 1, records }` under 60 KB so
+the cost is per collector request. Do not send one message per hit. Combining
+hits across requests would need a Durable Object or R2-plus-cron and is a
+separate product decision. The consumer must keep accepting a single-record
+body so messages already in the Queue still load.
 
 **Tables are fixed and carry `person_id`.** Table names start with `gauge_`,
 with no hex prefix (see core's AGENTS.md on table naming). Every table that
 involves a person uses a column named `person_id`, so core's `erasePeople`
 covers it with no list to update. `test/plugin.test.js` proves it. A new table
 that holds a person must do the same, and must be added to that test.
+
+**New columns and tables are optional to the loader until install runs.** On
+Cloudflare new code loads Queue batches before anyone runs
+`e9gauge install --url`, and a failed write retries the batch, which
+double-counts the other rollups. A column or table added after a release goes
+through `schemaFeatures` in `lib/loader.js` and is skipped while missing.
 
 **No database triggers.** See core's AGENTS.md. This package adds none.
 

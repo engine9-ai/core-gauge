@@ -23,6 +23,7 @@ import acquisition from './reports/acquisition.js';
 import pages from './reports/pages.js';
 import activity from './reports/activity.js';
 import custom_entries from './reports/custom_entries.js';
+import outbound from './reports/outbound.js';
 
 export const GAUGE_PLUGIN_PATH = '@engine9/core-gauge/gauge';
 
@@ -63,8 +64,8 @@ export async function install({ sqlWorker }) {
   return { message: `${GAUGE_ENTRY_SUMMARY_VIEW} view created` };
 }
 
-// Report paths: @engine9/core-gauge/gauge:reports:traffic (and sessions, acquisition, pages, activity, custom_entries)
-export const reports = { traffic, sessions, acquisition, pages, activity, custom_entries };
+// Report paths: @engine9/core-gauge/gauge:reports:traffic (and sessions, acquisition, pages, outbound, activity, custom_entries)
+export const reports = { traffic, sessions, acquisition, pages, outbound, activity, custom_entries };
 
 export { metadata, schema, settings, segmentDefinitionClauses };
 export const transforms = {};

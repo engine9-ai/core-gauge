@@ -1,26 +1,101 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="454" viewBox="0 0 960 454" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
-<rect width="960" height="454" rx="12" fill="#ffffff" stroke="#e5e7eb"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="642" viewBox="0 0 960 642" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+<rect width="960" height="642" rx="12" fill="#ffffff" stroke="#e5e7eb"/>
 <text x="28" y="40" font-size="20" fill="#111827" font-weight="600" text-anchor="start">Sessions</text>
 <text x="28" y="62" font-size="13" fill="#6b7280" font-weight="400" text-anchor="start">www.example.org · Sep 21 – Oct 20, 2026</text>
 <text x="932" y="40" font-size="11" fill="#6b7280" font-weight="400" text-anchor="end">sample data</text>
 <rect x="28" y="84" width="169.6" height="86" rx="10" fill="#f9fafb" stroke="#e5e7eb"/>
 <text x="44" y="110" font-size="12" fill="#6b7280" font-weight="400" text-anchor="start">Sessions</text>
-<text x="44" y="142" font-size="26" fill="#111827" font-weight="600" text-anchor="start">4,869</text>
-
+<text x="44" y="142" font-size="26" fill="#111827" font-weight="600" text-anchor="start">5,622</text>
 <rect x="211.6" y="84" width="169.6" height="86" rx="10" fill="#f9fafb" stroke="#e5e7eb"/>
 <text x="227.6" y="110" font-size="12" fill="#6b7280" font-weight="400" text-anchor="start">New visitors</text>
-<text x="227.6" y="142" font-size="26" fill="#111827" font-weight="600" text-anchor="start">2,736</text>
-
+<text x="227.6" y="142" font-size="26" fill="#111827" font-weight="600" text-anchor="start">2,861</text>
 <rect x="395.2" y="84" width="169.6" height="86" rx="10" fill="#f9fafb" stroke="#e5e7eb"/>
 <text x="411.2" y="110" font-size="12" fill="#6b7280" font-weight="400" text-anchor="start">Bounce rate</text>
-<text x="411.2" y="142" font-size="26" fill="#111827" font-weight="600" text-anchor="start">39.6%</text>
+<text x="411.2" y="142" font-size="26" fill="#111827" font-weight="600" text-anchor="start">35.8%</text>
 <text x="411.2" y="160" font-size="11" fill="#6b7280" font-weight="400" text-anchor="start">one view, then gone</text>
 <rect x="578.8" y="84" width="169.6" height="86" rx="10" fill="#f9fafb" stroke="#e5e7eb"/>
 <text x="594.8" y="110" font-size="12" fill="#6b7280" font-weight="400" text-anchor="start">Views per session</text>
-<text x="594.8" y="142" font-size="26" fill="#111827" font-weight="600" text-anchor="start">2.36</text>
-
+<text x="594.8" y="142" font-size="26" fill="#111827" font-weight="600" text-anchor="start">2.38</text>
 <rect x="762.4" y="84" width="169.6" height="86" rx="10" fill="#f9fafb" stroke="#e5e7eb"/>
 <text x="778.4" y="110" font-size="12" fill="#6b7280" font-weight="400" text-anchor="start">Time on site</text>
-<text x="778.4" y="142" font-size="26" fill="#111827" font-weight="600" text-anchor="start">133 s</text>
-<text x="778.4" y="160" font-size="11" fill="#6b7280" font-weight="400" text-anchor="start">average per session</text><text x="28" y="236" font-size="14" fill="#111827" font-weight="600" text-anchor="start">By device</text><line x1="28" x2="458" y1="250" y2="250" stroke="#e5e7eb"/><text x="28" y="268" font-size="11" fill="#6b7280" font-weight="600" text-anchor="start">Device</text><text x="138" y="268" font-size="11" fill="#6b7280" font-weight="600" text-anchor="start">Sessions</text><text x="450" y="268" font-size="11" fill="#6b7280" font-weight="600" text-anchor="end">Bounce rate</text><line x1="28" x2="458" y1="276" y2="276" stroke="#e5e7eb"/><text x="28" y="296" font-size="12" fill="#111827" font-weight="400" text-anchor="start">desktop</text><rect x="138" y="285" width="130" height="12" rx="3" fill="#c7d2fe"/><text x="330" y="296" font-size="12" fill="#111827" font-weight="400" text-anchor="end">2,822</text><text x="450" y="296" font-size="12" fill="#111827" font-weight="400" text-anchor="end">39.5%</text><line x1="28" x2="458" y1="306" y2="306" stroke="#e5e7eb"/><text x="28" y="326" font-size="12" fill="#111827" font-weight="400" text-anchor="start">mobile</text><rect x="138" y="315" width="81.44578313253012" height="12" rx="3" fill="#c7d2fe"/><text x="330" y="326" font-size="12" fill="#111827" font-weight="400" text-anchor="end">1,768</text><text x="450" y="326" font-size="12" fill="#111827" font-weight="400" text-anchor="end">39.3%</text><line x1="28" x2="458" y1="336" y2="336" stroke="#e5e7eb"/><text x="28" y="356" font-size="12" fill="#111827" font-weight="400" text-anchor="start">tablet</text><rect x="138" y="345" width="12.852586817859674" height="12" rx="3" fill="#c7d2fe"/><text x="330" y="356" font-size="12" fill="#111827" font-weight="400" text-anchor="end">279</text><text x="450" y="356" font-size="12" fill="#111827" font-weight="400" text-anchor="end">41.9%</text><text x="502" y="236" font-size="14" fill="#111827" font-weight="600" text-anchor="start">By country</text><line x1="502" x2="932" y1="250" y2="250" stroke="#e5e7eb"/><text x="502" y="268" font-size="11" fill="#6b7280" font-weight="600" text-anchor="start">Country</text><text x="612" y="268" font-size="11" fill="#6b7280" font-weight="600" text-anchor="start">Sessions</text><text x="924" y="268" font-size="11" fill="#6b7280" font-weight="600" text-anchor="end">Visitors</text><line x1="502" x2="932" y1="276" y2="276" stroke="#e5e7eb"/><text x="502" y="296" font-size="12" fill="#111827" font-weight="400" text-anchor="start">US</text><rect x="612" y="285" width="130" height="12" rx="3" fill="#c7d2fe"/><text x="804" y="296" font-size="12" fill="#111827" font-weight="400" text-anchor="end">3,440</text><text x="924" y="296" font-size="12" fill="#111827" font-weight="400" text-anchor="end">1,911</text><line x1="502" x2="932" y1="306" y2="306" stroke="#e5e7eb"/><text x="502" y="326" font-size="12" fill="#111827" font-weight="400" text-anchor="start">CA</text><rect x="612" y="315" width="17.988372093023255" height="12" rx="3" fill="#c7d2fe"/><text x="804" y="326" font-size="12" fill="#111827" font-weight="400" text-anchor="end">476</text><text x="924" y="326" font-size="12" fill="#111827" font-weight="400" text-anchor="end">274</text><line x1="502" x2="932" y1="336" y2="336" stroke="#e5e7eb"/><text x="502" y="356" font-size="12" fill="#111827" font-weight="400" text-anchor="start">GB</text><rect x="612" y="345" width="13.680232558139535" height="12" rx="3" fill="#c7d2fe"/><text x="804" y="356" font-size="12" fill="#111827" font-weight="400" text-anchor="end">362</text><text x="924" y="356" font-size="12" fill="#111827" font-weight="400" text-anchor="end">211</text><line x1="502" x2="932" y1="366" y2="366" stroke="#e5e7eb"/><text x="502" y="386" font-size="12" fill="#111827" font-weight="400" text-anchor="start">DE</text><rect x="612" y="375" width="12.093023255813954" height="12" rx="3" fill="#c7d2fe"/><text x="804" y="386" font-size="12" fill="#111827" font-weight="400" text-anchor="end">320</text><text x="924" y="386" font-size="12" fill="#111827" font-weight="400" text-anchor="end">192</text><line x1="502" x2="932" y1="396" y2="396" stroke="#e5e7eb"/><text x="502" y="416" font-size="12" fill="#111827" font-weight="400" text-anchor="start">AU</text><rect x="612" y="405" width="10.241279069767442" height="12" rx="3" fill="#c7d2fe"/><text x="804" y="416" font-size="12" fill="#111827" font-weight="400" text-anchor="end">271</text><text x="924" y="416" font-size="12" fill="#111827" font-weight="400" text-anchor="end">148</text>
+<text x="778.4" y="142" font-size="26" fill="#111827" font-weight="600" text-anchor="start">189 s</text>
+<text x="778.4" y="160" font-size="11" fill="#6b7280" font-weight="400" text-anchor="start">average per session</text>
+<text x="28" y="236" font-size="14" fill="#111827" font-weight="600" text-anchor="start">By device</text>
+<line x1="28" x2="458" y1="250" y2="250" stroke="#e5e7eb"/>
+<text x="28" y="268" font-size="11" fill="#6b7280" font-weight="600" text-anchor="start">Device</text>
+<text x="138" y="268" font-size="11" fill="#6b7280" font-weight="600" text-anchor="start">Sessions</text>
+<text x="450" y="268" font-size="11" fill="#6b7280" font-weight="600" text-anchor="end">Bounce rate</text>
+<line x1="28" x2="458" y1="276" y2="276" stroke="#e5e7eb"/>
+<text x="28" y="296" font-size="12" fill="#111827" font-weight="400" text-anchor="start">desktop</text>
+<rect x="138" y="285" width="150" height="12" rx="3" fill="#c7d2fe"/>
+<text x="330" y="296" font-size="12" fill="#111827" font-weight="400" text-anchor="end">3,282</text>
+<text x="450" y="296" font-size="12" fill="#111827" font-weight="400" text-anchor="end">36.1%</text>
+<text x="28" y="326" font-size="12" fill="#111827" font-weight="400" text-anchor="start">mobile</text>
+<rect x="138" y="315" width="89.94515539305301" height="12" rx="3" fill="#c7d2fe"/>
+<text x="330" y="326" font-size="12" fill="#111827" font-weight="400" text-anchor="end">1,968</text>
+<text x="450" y="326" font-size="12" fill="#111827" font-weight="400" text-anchor="end">35.8%</text>
+<text x="28" y="356" font-size="12" fill="#111827" font-weight="400" text-anchor="start">tablet</text>
+<rect x="138" y="345" width="17.001828153564897" height="12" rx="3" fill="#c7d2fe"/>
+<text x="330" y="356" font-size="12" fill="#111827" font-weight="400" text-anchor="end">372</text>
+<text x="450" y="356" font-size="12" fill="#111827" font-weight="400" text-anchor="end">32.5%</text>
+<text x="28" y="390" font-size="14" fill="#111827" font-weight="600" text-anchor="start">By browser</text>
+<line x1="28" x2="458" y1="404" y2="404" stroke="#e5e7eb"/>
+<text x="28" y="422" font-size="11" fill="#6b7280" font-weight="600" text-anchor="start">Browser</text>
+<text x="138" y="422" font-size="11" fill="#6b7280" font-weight="600" text-anchor="start">Sessions</text>
+<text x="450" y="422" font-size="11" fill="#6b7280" font-weight="600" text-anchor="end">Visitors</text>
+<line x1="28" x2="458" y1="430" y2="430" stroke="#e5e7eb"/>
+<text x="28" y="450" font-size="12" fill="#111827" font-weight="400" text-anchor="start">Chrome</text>
+<rect x="138" y="439" width="150" height="12" rx="3" fill="#c7d2fe"/>
+<text x="330" y="450" font-size="12" fill="#111827" font-weight="400" text-anchor="end">2,617</text>
+<text x="450" y="450" font-size="12" fill="#111827" font-weight="400" text-anchor="end">1,328</text>
+<text x="28" y="480" font-size="12" fill="#111827" font-weight="400" text-anchor="start">Safari</text>
+<rect x="138" y="469" width="104.94841421474972" height="12" rx="3" fill="#c7d2fe"/>
+<text x="330" y="480" font-size="12" fill="#111827" font-weight="400" text-anchor="end">1,831</text>
+<text x="450" y="480" font-size="12" fill="#111827" font-weight="400" text-anchor="end">918</text>
+<text x="28" y="510" font-size="12" fill="#111827" font-weight="400" text-anchor="start">Edge</text>
+<rect x="138" y="499" width="30.95147115017195" height="12" rx="3" fill="#c7d2fe"/>
+<text x="330" y="510" font-size="12" fill="#111827" font-weight="400" text-anchor="end">540</text>
+<text x="450" y="510" font-size="12" fill="#111827" font-weight="400" text-anchor="end">278</text>
+<text x="28" y="540" font-size="12" fill="#111827" font-weight="400" text-anchor="start">Firefox</text>
+<rect x="138" y="529" width="24.64654184180359" height="12" rx="3" fill="#c7d2fe"/>
+<text x="330" y="540" font-size="12" fill="#111827" font-weight="400" text-anchor="end">430</text>
+<text x="450" y="540" font-size="12" fill="#111827" font-weight="400" text-anchor="end">233</text>
+<text x="28" y="570" font-size="12" fill="#111827" font-weight="400" text-anchor="start">Opera</text>
+<rect x="138" y="559" width="7.393962552541078" height="12" rx="3" fill="#c7d2fe"/>
+<text x="330" y="570" font-size="12" fill="#111827" font-weight="400" text-anchor="end">129</text>
+<text x="450" y="570" font-size="12" fill="#111827" font-weight="400" text-anchor="end">69</text>
+<text x="28" y="600" font-size="12" fill="#111827" font-weight="400" text-anchor="start">Samsung Internet</text>
+<rect x="138" y="589" width="4.298815437523882" height="12" rx="3" fill="#c7d2fe"/>
+<text x="330" y="600" font-size="12" fill="#111827" font-weight="400" text-anchor="end">75</text>
+<text x="450" y="600" font-size="12" fill="#111827" font-weight="400" text-anchor="end">35</text>
+<text x="502" y="236" font-size="14" fill="#111827" font-weight="600" text-anchor="start">By country</text>
+<line x1="502" x2="932" y1="250" y2="250" stroke="#e5e7eb"/>
+<text x="502" y="268" font-size="11" fill="#6b7280" font-weight="600" text-anchor="start">Country</text>
+<text x="612" y="268" font-size="11" fill="#6b7280" font-weight="600" text-anchor="start">Sessions</text>
+<text x="924" y="268" font-size="11" fill="#6b7280" font-weight="600" text-anchor="end">Visitors</text>
+<line x1="502" x2="932" y1="276" y2="276" stroke="#e5e7eb"/>
+<text x="502" y="296" font-size="12" fill="#111827" font-weight="400" text-anchor="start">US</text>
+<rect x="612" y="285" width="150" height="12" rx="3" fill="#c7d2fe"/>
+<text x="804" y="296" font-size="12" fill="#111827" font-weight="400" text-anchor="end">3,909</text>
+<text x="924" y="296" font-size="12" fill="#111827" font-weight="400" text-anchor="end">1,989</text>
+<text x="502" y="326" font-size="12" fill="#111827" font-weight="400" text-anchor="start">CA</text>
+<rect x="612" y="315" width="20.874904067536455" height="12" rx="3" fill="#c7d2fe"/>
+<text x="804" y="326" font-size="12" fill="#111827" font-weight="400" text-anchor="end">544</text>
+<text x="924" y="326" font-size="12" fill="#111827" font-weight="400" text-anchor="end">279</text>
+<text x="502" y="356" font-size="12" fill="#111827" font-weight="400" text-anchor="start">DE</text>
+<rect x="612" y="345" width="15.963161933998464" height="12" rx="3" fill="#c7d2fe"/>
+<text x="804" y="356" font-size="12" fill="#111827" font-weight="400" text-anchor="end">416</text>
+<text x="924" y="356" font-size="12" fill="#111827" font-weight="400" text-anchor="end">204</text>
+<text x="502" y="386" font-size="12" fill="#111827" font-weight="400" text-anchor="start">GB</text>
+<rect x="612" y="375" width="15.65617805065234" height="12" rx="3" fill="#c7d2fe"/>
+<text x="804" y="386" font-size="12" fill="#111827" font-weight="400" text-anchor="end">408</text>
+<text x="924" y="386" font-size="12" fill="#111827" font-weight="400" text-anchor="end">211</text>
+<text x="502" y="416" font-size="12" fill="#111827" font-weight="400" text-anchor="start">AU</text>
+<rect x="612" y="405" width="10.590943975441288" height="12" rx="3" fill="#c7d2fe"/>
+<text x="804" y="416" font-size="12" fill="#111827" font-weight="400" text-anchor="end">276</text>
+<text x="924" y="416" font-size="12" fill="#111827" font-weight="400" text-anchor="end">145</text>
+<text x="502" y="446" font-size="12" fill="#111827" font-weight="400" text-anchor="start">FR</text>
+<rect x="612" y="435" width="2.647735993860322" height="12" rx="3" fill="#c7d2fe"/>
+<text x="804" y="446" font-size="12" fill="#111827" font-weight="400" text-anchor="end">69</text>
+<text x="924" y="446" font-size="12" fill="#111827" font-weight="400" text-anchor="end">33</text>
 </svg>

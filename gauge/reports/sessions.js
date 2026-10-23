@@ -58,6 +58,16 @@ export default {
           ]
         },
         {
+          id: 'by_browser',
+          component: 'Table',
+          orderBy: { eql: 'count(*)', orderByDirection: 'DESC' },
+          dimensions: [{ name: 'Browser', eql: 'browser' }],
+          metrics: [
+            { name: 'Sessions', eql: 'count(*)' },
+            { name: 'Visitors', eql: 'count(distinct device_id)' }
+          ]
+        },
+        {
           id: 'by_country',
           component: 'Table',
           orderBy: { eql: 'count(*)', orderByDirection: 'DESC' },

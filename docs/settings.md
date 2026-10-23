@@ -8,7 +8,7 @@ Booleans are the strings `true` and `false`. Secrets (`SESSION_SECRET`, `GAUGE_S
 | Setting | Default | |
 | --- | --- | --- |
 | `collect_enabled` | `true` | Master switch. When false the collector answers 204 and records nothing. |
-| `streams` | `[]` | Data streams, one per site or app: [{"id":"G-www","name":"www.example.com","type":"web_stream","hosts":["www.example.com"]}]. type is web_stream, app_stream or server_stream. The id is public (like a GA4 Measurement ID) and is what the page or app sends. Each stream becomes one engine9 input. |
+| `streams` | `[]` | Data streams, one per site or app: [{"id":"G-www","name":"www.example.com","type":"web_stream","hosts":["www.example.com"]}]. type is web_stream, app_stream or server_stream. "hash_routes":true keeps a #/ or #!/ fragment on the path for a hash-routed site (other fragments are always dropped); default false. The id is public (like a GA4 Measurement ID) and is what the page or app sends. Each stream becomes one engine9 input. |
 | `allowed_hosts` | (empty) | Comma-separated browser origins hosts allowed to send (www.example.com, *.example.com). Empty accepts any origin for a valid stream id. Streams may add their own hosts. |
 
 ## Storage

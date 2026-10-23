@@ -1,8 +1,10 @@
 /*
   Example Cloudflare Worker: the gauge collector, queue consumer and cron.
 
-  Deploy it as its own Worker (a sibling of the site, not part of core's). It
-  shares the site's D1 database so the loader writes where core reads.
+  Deploy it as its own Worker (a sibling of the site, not part of core's), or
+  mount `createGaugeHandlers` on the site's Worker under GAUGE_BASE_PATH (see
+  docs/deploy.md, "Inside the site's Worker"). It shares the site's D1 so the
+  loader writes where core reads.
 
   Bindings (see wrangler.toml.example):
     DB              the engine9 D1 database, with gauge installed

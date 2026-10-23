@@ -69,7 +69,7 @@ well-behaved client must not retry something that will never be accepted.
 - `SESSION_START` and `FIRST_VISIT` are rejected from clients; the loader derives them.
 - Money types (`TRANSACTION`, `TRANSACTION_ONE_TIME`, and the other `TRANSACTION_*`) need a server key.
 - An `IDENTIFY` hit from a browser becomes a device-to-person link only when the request carries a valid Core Session.
-- URLs are cut to the query allowlist, plus `utm_*` and the `source_code_params`; any value that looks like an email address is removed. `props` are filtered as described in [custom-entries.md](custom-entries.md).
+- URLs are cut to the query allowlist, plus `utm_*` and the `source_code_params`; any value that looks like an email address is removed. On a stream with `hash_routes` on, a `#/` or `#!/` fragment is kept on `path` (hash-routed sites). Every other fragment, and every fragment on other streams, is dropped. `props` are filtered as described in [custom-entries.md](custom-entries.md).
 - A server key may add `person_id` or `email` to a hit. The email is hashed (`email_hash_v1`, sha256 of the lowercased address) and the address is never logged.
 
 ## `POST /send`

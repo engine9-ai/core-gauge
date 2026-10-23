@@ -203,6 +203,55 @@ test('start() sends the initial page view and one per navigation, not repeats', 
   assert.deepEqual(log.records.map((r) => r.path), ['/', '/about']);
 });
 
+test('hashRoutes watches #/ navigation and does not repeat the same hash', async () => {
+  const log = { records: [], async append(r) { log.records.push(...r); } };
+  const collector = createCollector({
+    settings: createSettingsSource({ settings: { streams: [{ ...STREAM, hash_routes: true }] } }),
+    log,
+    sessionSecret: 's',
+    salt: 'x',
+    rateLimitPerMinute: 1000
+  });
+  const net = collectorFetch(collector);
+  const listeners = {};
+  const win = {
+    location: {
+      host: 'www.example.com',
+      origin: 'https://www.example.com',
+      pathname: '/',
+      search: '',
+      hash: '#/home',
+      get href() {
+        return `https://www.example.com${this.pathname}${this.search}${this.hash}`;
+      }
+    },
+    history: { pushState() {}, replaceState() {} },
+    addEventListener: (n, f) => (listeners[n] = f)
+  };
+  const doc = { title: 't', referrer: '', addEventListener() {}, visibilityState: 'visible' };
+  const gauge = createGauge({
+    endpoint: 'https://g.example.com',
+    stream: 'G-test',
+    hashRoutes: true,
+    fetch: net.fetch,
+    storage: storage(),
+    window: win,
+    document: doc,
+    navigator: {},
+    flushMs: 0
+  });
+  gauge.start();
+  win.location.hash = '#/about';
+  listeners.hashchange();
+  win.location.hash = '#/about';
+  listeners.hashchange();
+  await gauge.flush();
+  assert.deepEqual(
+    log.records.map((r) => r.path),
+    ['/#/home', '/#/about']
+  );
+});
+
 test('the server client sends a trusted hit with a key', async () => {
   const calls = [];
   const gauge = createGaugeServer({

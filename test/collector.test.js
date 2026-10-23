@@ -91,6 +91,66 @@ test('collect: records a scrubbed hit, sets the device cookie, answers 200', asy
   assert.ok(!JSON.stringify(r).includes('alex@example.com'), 'no email anywhere in the record');
 });
 
+test('collect: a stream without hash_routes drops every fragment, #/ included', async () => {
+  const { collector, log } = setup();
+  const res = await post(collector, {
+    ...page(),
+    hits: [
+      {
+        id: 'hit-hash0000',
+        t: 'PAGE_VIEW',
+        ts: Date.parse('2026-10-21T11:59:59Z'),
+        url: 'https://www.example.com/#/account/alex@example.com?utm_source=news',
+        referrer: 'https://www.example.com/#/home'
+      }
+    ]
+  });
+  assert.equal(res.status, 200);
+  const r = log.records[0];
+  assert.equal(r.path, '/');
+  assert.equal(r.referrer_path, '/');
+  assert.ok(!r.utm_source, 'a query inside a dropped fragment is not read');
+  assert.ok(!JSON.stringify(r).includes('alex@example.com'));
+});
+
+test('collect: a stream with hash_routes keeps a #/ route on path; other fragments are dropped', async () => {
+  const { collector, log } = setup({ settings: { streams: [{ ...STREAM, hash_routes: true }] } });
+  const res = await post(collector, {
+    ...page(),
+    hits: [
+      {
+        id: 'hit-hash0001',
+        t: 'PAGE_VIEW',
+        ts: Date.parse('2026-10-21T11:59:59Z'),
+        url: 'https://www.example.com/#/pricing/alex@example.com?utm_source=news',
+        referrer: 'https://www.example.com/#/home'
+      }
+    ]
+  });
+  assert.equal(res.status, 200);
+  const r = log.records[0];
+  assert.equal(r.path, '/#/pricing/:email');
+  assert.equal(r.utm_source, 'news');
+  assert.equal(r.referrer_path, '/#/home');
+
+  log.records.length = 0;
+  await post(collector, {
+    ...page(),
+    hits: [
+      {
+        id: 'hit-hash0002',
+        t: 'PAGE_VIEW',
+        ts: Date.parse('2026-10-21T11:59:59Z'),
+        url: 'https://www.example.com/pricing#section',
+        referrer: 'https://news.example.org/story#frag'
+      }
+    ]
+  });
+  assert.equal(log.records[0].path, '/pricing');
+  assert.equal(log.records[0].referrer_path, '/story');
+  assert.ok(!JSON.stringify(r).includes('alex@example.com'), 'no email anywhere in the record');
+});
+
 test('collect: the device cookie is reused and no new cookie is set', async () => {
   const { collector, log } = setup();
   const first = await post(collector, page());
@@ -127,6 +187,18 @@ test('collect: bots are dropped, not logged', async () => {
   assert.equal(res.status, 200);
   assert.equal(log.records.length, 0);
   assert.equal(collector.stats.bots, 1);
+});
+
+test('collect: a missing s is a 400 that names the field, and nothing is kept aside', async () => {
+  const { collector, log } = setup();
+  const { s, ...rest } = page();
+  let res = await post(collector, { ...rest, stream: s });
+  assert.equal(res.status, 400);
+  assert.match(JSON.parse(res.body).error, /missing s \(the stream id\); the field is named s, not stream/);
+  res = await post(collector, rest);
+  assert.equal(res.status, 400);
+  assert.match(JSON.parse(res.body).error, /missing s/);
+  assert.equal(log.records.length, 0);
 });
 
 test('collect: unknown stream is a 404 and a bounded copy is kept aside', async () => {

@@ -73,6 +73,30 @@ test('stream add, list and remove', async () => {
   assert.equal(r.code, 2);
 });
 
+test('stream --hash-routes is stored per stream and can be turned on and off', async () => {
+  let r = await cli('stream', 'add', '--id', 'G-spa', '--hosts', 'spa.example.com', '--hash-routes', 'on');
+  assert.equal(r.code, 0, r.err);
+  assert.match(r.out, /hashRoutes: true/, 'the page needs the client option as well');
+  r = await cli('stream', 'add', '--id', 'G-plain');
+  assert.equal(r.code, 0, r.err);
+  r = await cli('stream', 'list');
+  assert.match(r.out, /G-spa .*hash_routes/);
+  assert.doesNotMatch(r.out, /G-plain .*hash_routes/);
+
+  r = await cli('stream', 'update', '--id', 'G-plain', '--hash-routes', 'on');
+  assert.equal(r.code, 0, r.err);
+  r = await cli('stream', 'update', '--id', 'G-spa', '--hash-routes', 'off');
+  assert.equal(r.code, 0, r.err);
+  r = await cli('stream', 'list');
+  assert.match(r.out, /G-plain .*hash_routes/);
+  assert.doesNotMatch(r.out, /G-spa .*hash_routes/);
+
+  assert.equal((await cli('stream', 'update', '--id', 'G-spa')).code, 2, 'update needs something to change');
+  assert.equal((await cli('stream', 'update', '--id', 'nope', '--hash-routes', 'on')).code, 2);
+  await cli('stream', 'remove', '--id', 'G-spa');
+  await cli('stream', 'remove', '--id', 'G-plain');
+});
+
 test('custom entries are validated, declared, and listed', async () => {
   let r = await cli('custom', 'add', '--name', 'Video Upload');
   assert.equal(r.code, 2);
@@ -162,14 +186,16 @@ test('load reads the disk log into the database, and erase-logs removes a person
   r = await cli('load', '--log-dir', logDir);
   assert.match(r.out, /loaded 0 records/, 'the checkpoint moved with the rewrite; nothing is re-read');
 
-  r = await cli('replay', '--from', new Date(base).toISOString().slice(0, 10), '--log-dir', logDir);
+  r = await cli('reloadStats', '--from', new Date(base).toISOString().slice(0, 10), '--log-dir', logDir);
   assert.equal(r.code, 0, r.err);
-  assert.match(r.out, /replayed 2 records/, 'the erased hit is gone from the log, so the replay cannot bring it back');
+  assert.match(r.out, /reloaded 2 records/, 'the erased hit is gone from the log, so reloadStats cannot bring it back');
 });
 
 test('usage errors exit 2 with a message', async () => {
   assert.equal((await cli('nonsense')).code, 2);
-  assert.equal((await cli('replay')).code, 2);
+  assert.equal((await cli('replay')).code, 2, 'replay was renamed reloadStats, with no alias');
+  assert.equal((await cli('reloadStats')).code, 2);
+  assert.equal((await cli('stream', 'add', '--hash-routes', 'maybe')).code, 2);
   assert.equal((await cli('erase-logs')).code, 2);
   assert.equal((await cli('stream', 'list', '--bogus')).code, 2);
   const noDb = await run(['stream', 'list'], { cwd: REPO, env: {}, out: () => {}, err: () => {} });

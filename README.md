@@ -49,26 +49,30 @@ writes.
 
 ## Sample reports
 
-Gauge ships six report definitions. The images below are their real output
-over a simulated 30 days on one site, `www.example.org`. Each report was
-compiled by the engine9 report compiler against a SQLite database filled by
-Gauge's own loader. The images are drawings of that output, not screenshots of
-a product screen.
+Gauge ships seven report definitions. The images below are their real output
+over a simulated 30 days on one site, `www.example.org`. Gauge's own loader
+filled a SQLite database, and every number is the result of a report
+component's query against it. The images are drawings of that output, not
+screenshots of a product screen. `npm run sample-images` redraws them.
 
 **Traffic** (`@engine9/core-gauge/gauge:reports:traffic`). Visitors, sessions
 and page views per day. A known person is a visitor Gauge could tie to a
 `person_id`.
 
-![Traffic report: 2,736 visitors, 4,869 sessions, 11,496 page views and 210 known people, with daily page views and visitors rising after the newsletter on Oct 9](docs/images/traffic.svg)
+![Traffic report: 2,861 visitors, 5,622 sessions, 13,371 page views, 5,153 visitors counted once a day and 189 known people, with daily page views and visitors rising after the newsletter on Oct 9](docs/images/traffic.svg)
+
+Traffic also counts each visitor once on each day they came, the views per
+visitor per day, and the number of days with visits: the totals a simple daily
+counter shows.
 
 **Sessions** (`sessions`). How long visits last, how many visitors leave after
-one page (the bounce rate), and the split by device and country.
+one page (the bounce rate), and the split by device, browser and country.
 
-![Sessions report: 39.6% bounce rate, 2.36 views per session, 133 seconds per session, by device and by country](docs/images/sessions.svg)
+![Sessions report: 35.8% bounce rate, 2.38 views per session, 189 seconds per session, by device, by browser and by country](docs/images/sessions.svg)
 
 **Acquisition** (`acquisition`). Where visits came from: the referring site,
 and the `utm_source`, `utm_medium` and `utm_campaign` on the link. Known people
-shows how many of those visitors you could name. For example, 51 of the 337
+shows how many of those visitors you could name. For example, 11 of the 163
 visitors from the paid social campaign are people the site knows, because they
 signed up or signed in.
 
@@ -80,12 +84,17 @@ sessions that started on the page. A page with views but no entrances, like
 
 ![Pages report: top pages by views, with entrances](docs/images/pages.svg)
 
+**Outbound clicks** (`outbound`). Clicks on links that leave the site, per
+destination host and per day.
+
+![Outbound clicks report: clicks by destination host, with a share of all clicks, and clicks per day](docs/images/outbound.svg)
+
 **Activity** and **Custom entries** (`activity`, `custom_entries`). These
 two reports read the timeline, so they count people Gauge could identify. Page
 views are left off the timeline by default (see `timeline_entry_types`), which
 keeps it small. Traffic, Sessions, Acquisition and Pages count every visitor.
 
-![Known-person activity by entry type, and 301 video uploads by 133 people](docs/images/activity.svg)
+![Known-person activity by entry type, and 177 video uploads by 114 people](docs/images/activity.svg)
 
 `@engine9/core` has no dashboard of its own. An engine9 report runner shows
 these reports, for example the MCP `report` tool with the path above. Every
@@ -126,8 +135,9 @@ minutes at setup and then rarely.
 
 | You want to | Run |
 | --- | --- |
-| Set Gauge up in a database for the first time | `e9gauge install` (add `--with-standard` on an empty database) |
+| Set Gauge up in a database for the first time | `e9gauge install` (it adds the person and timeline schemas if they are missing) |
 | Start measuring a new site or app | `e9gauge stream add --id G-www --name www.example.org --hosts www.example.org` |
+| Measure a site that routes with `#/path` | `e9gauge stream update --id G-www --hash-routes on` |
 | See which sites and apps are measured | `e9gauge stream list` |
 | Count a new action, like `video_upload` | `e9gauge custom add --name video_upload` (`--pin` keeps it on the timeline even if you narrow `timeline_entry_types`) |
 | See or change a setting, such as consent or session timeout | `e9gauge settings`, then `e9gauge set consent_mode required` |
@@ -135,7 +145,7 @@ minutes at setup and then rarely.
 | Confirm that a page is sending hits | `e9gauge tail --follow`, then open the page |
 | Run the collector on your own server | `e9gauge serve` |
 | Load the log by hand, for example after an outage | `e9gauge load` |
-| Rebuild the counts after a fix or a changed setting | `e9gauge replay --from 2026-10-01` |
+| Rebuild the counts after a fix, a changed setting, or a crash | `e9gauge reloadStats --from 2026-10-01` (on Cloudflare this needs the R2 archive) |
 | Remove a person from the raw log after an erasure request | `e9gauge erase-logs --person-id 12` |
 | Pick up a new Gauge release | install the package, redeploy, then `e9gauge install` again |
 
@@ -174,6 +184,10 @@ the wrong id.
 npm install @engine9/core @engine9/schemas @engine9/core-gauge
 ```
 
+Gauge needs `@engine9/core` and `@engine9/schemas` **1.11.3 or later**. A site
+on an older core must upgrade those packages first; `e9gauge install` and
+`e9gauge doctor` say so when one is older.
+
 List the package so core's plugin discovery sees it, in `package.json`:
 
 ```json
@@ -182,7 +196,7 @@ List the package so core's plugin discovery sees it, in `package.json`:
 
 ```
 export ENGINE9_DATABASE_CONNECTION=sqlite://./engine9.db
-npx e9gauge install --with-standard         # person + timeline schemas, then gauge
+npx e9gauge install                         # person + timeline schemas if missing, then gauge
 npx e9gauge stream add --id G-www --name www.example.com --hosts www.example.com
 export SESSION_SECRET=...                   # the same value as the site, so logins are recognised
 export GAUGE_SALT=$(openssl rand -hex 24)   # keeps cookieless visitor ids stable
@@ -201,6 +215,14 @@ gauge.track('video_upload', { size_mb: 40 }, 40);
 await gauge.identify();                          // after sign-in: link this device to the person
 ```
 
+Sites that route with `#/path` or `#!/path` (the URL path does not change)
+need two switches. Pass `hashRoutes: true` so `start()` watches `hashchange`
+as well as `pushState`, and turn on the stream's `hash_routes` setting
+(`e9gauge stream update --id G-www --hash-routes on`) so the collector keeps
+the `#/` route on `path`. Without the stream setting every fragment is dropped,
+so a fragment never reaches the database by default. You can still turn
+`autoPageViews` off and call `page()` yourself.
+
 A server can send what a browser may not (transactions, a person it already knows):
 
 ```js
@@ -211,7 +233,8 @@ await g.send([{ t: 'LOGIN', person_id: 12 }]);
 
 Create that key with `e9core create-api-key --name gauge-server --scopes gauge:send`.
 
-Production on Cloudflare (Queue, R2, D1) and independent Node servers:
+Production on Cloudflare (Queue, R2, D1; the collector can be its own Worker
+or live inside the site's Worker) and independent Node servers:
 [docs/deploy.md](docs/deploy.md).
 
 ## If you know GA4
@@ -290,12 +313,13 @@ that do not match a person yet are retried on every load.
 | Who uploaded videos | segment clause `didCustomEntry` with name `video_upload`; report `custom_entries` |
 | Where they came from | reports `acquisition` and `sessions` |
 | Which pages | report `pages` |
+| Which links to other sites they clicked | report `outbound` |
 
 The reports read Gauge's rollup tables (`gauge_device_day`, `gauge_session`,
-`gauge_view_day`) and the `gauge_entry_summary` view. `activity` and
-`custom_entries` read the timeline, so with the default
+`gauge_view_day`, `gauge_outbound_day`) and the `gauge_entry_summary` view.
+`activity` and `custom_entries` read the timeline, so with the default
 `timeline_mode=identified` they cover people the collector could identify; the
-other four cover everyone.
+other five cover everyone.
 
 ## Privacy
 

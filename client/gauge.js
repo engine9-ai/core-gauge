@@ -8,7 +8,8 @@
     await gauge.identify();                           // after sign-in (see below)
 
   Page views (including single-page-app navigation), outbound clicks, file
-  downloads and form starts are automatic and each can be turned off.
+  downloads and form starts are automatic and each can be turned off. Hash-
+  routed sites (`#/path`) pass `hashRoutes: true` so hash changes count.
 
   Sending. Hits queue in memory and in localStorage. They go out in batches by
   fetch (keepalive) and, when the page is hiding, by sendBeacon. A failed batch
@@ -80,6 +81,7 @@ function safeStorage(provided) {
  * @param {string} options.stream          stream id, e.g. G-www
  * @param {'web'|'ios'|'android'|'desktop'} [options.platform]
  * @param {boolean} [options.autoPageViews=true]
+ * @param {boolean} [options.hashRoutes=false]  also watch `#/` and `#!/` (hash-routed sites)
  * @param {boolean} [options.outboundClicks=true]
  * @param {boolean} [options.downloads=true]
  * @param {boolean} [options.formStarts=true]
@@ -101,6 +103,7 @@ export function createGauge(options = {}) {
     stream,
     platform = 'web',
     autoPageViews = true,
+    hashRoutes = false,
     outboundClicks = true,
     downloads = true,
     formStarts = true,
@@ -311,8 +314,14 @@ export function createGauge(options = {}) {
     started = true;
     if (!doc || !win) return;
     if (autoPageViews) {
+      const locationKey = () => {
+        const loc = win.location;
+        const hash = hashRoutes ? loc.hash || '' : '';
+        const route = hash.startsWith('#/') || hash.startsWith('#!/') ? hash : '';
+        return `${loc.pathname}${loc.search}${route}`;
+      };
       const emit = () => {
-        const path = win.location.pathname + win.location.search;
+        const path = locationKey();
         if (path === lastPath) return;
         const referrer = lastPath === null ? doc.referrer : `${win.location.origin}${lastPath}`;
         lastPath = path;
@@ -328,6 +337,7 @@ export function createGauge(options = {}) {
         };
       }
       win.addEventListener('popstate', emit);
+      if (hashRoutes) win.addEventListener('hashchange', emit);
       emit();
     }
     if (outboundClicks || downloads) {

@@ -25,6 +25,10 @@ export default {
         { id: 'visitors', component: 'StatCard', name: 'Visitors', metric: { eql: 'count(distinct device_id)' } },
         { id: 'sessions', component: 'StatCard', name: 'Sessions', metric: { eql: 'sum(sessions)' } },
         { id: 'views', component: 'StatCard', name: 'Views', metric: { eql: 'sum(views)' } },
+        // One row per device per day: a visitor counted once on each day they came.
+        { id: 'visitor_days', component: 'StatCard', name: 'Visitors counted once a day', metric: { eql: 'count(*)' } },
+        { id: 'views_per_visitor_day', component: 'StatCard', name: 'Views per visitor per day', metric: { eql: 'avg(views)', format: 'number' } },
+        { id: 'days', component: 'StatCard', name: 'Days with visits', metric: { eql: 'count(distinct date)' } },
         {
           id: 'known_people',
           component: 'StatCard',

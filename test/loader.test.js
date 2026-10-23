@@ -43,6 +43,8 @@ function hit(o = {}) {
 }
 
 const view = (min, p = '/', o = {}) => hit({ ts: at(min), path: p, ...o });
+/** An outbound click: the record's host is the link's host, as buildRecord writes it. */
+const outbound = (min, host, o = {}) => hit({ ts: at(min), entry_type_id: 110, entry_type: 'OUTBOUND_CLICK', host, path: '/', ...o });
 const timeline = (worker) =>
   rows(worker, 'select entry_type_id, person_id, input_id, ts, source_code_id, id from timeline order by ts, entry_type_id');
 
@@ -535,28 +537,78 @@ test('end to end: collector -> disk log -> loader, with a checkpoint that only m
   }
 });
 
-test('replay from a date rebuilds sessions and rollups exactly', async () => {
+test('reloadStats from a date rebuilds sessions and rollups exactly', async () => {
   const { worker } = await createGaugeWorker({ settings: { timeline_mode: 'all' } });
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'gauge-replay-'));
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'gauge-reload-'));
   const log = createDiskLog({ directory: dir, fsync: 'none', hostId: 'web', pid: 1, clock: () => new Date('2026-10-21T12:00:00Z') });
   try {
-    await log.append([view(0, '/'), view(1, '/a'), view(2, '/b')]);
+    await log.append([view(0, '/'), view(1, '/a'), view(2, '/b'), outbound(3, 'shop.example.org')]);
     await log.flush();
     await loadFromDisk(worker, { directory: dir, now: NOW, prune: false });
     const before = {
       sessions: await rows(worker, 'select id, entries, views, duration_s from gauge_session'),
       dd: await rows(worker, 'select date, sessions, views, entries from gauge_device_day'),
       vd: await rows(worker, 'select date, view_name, views, sessions_started from gauge_view_day order by view_name'),
+      od: await rows(worker, 'select date, link_host, clicks from gauge_outbound_day'),
       tl: await timeline(worker)
     };
-    const replay = await loadFromDisk(worker, { directory: dir, now: NOW, prune: false, from: '2026-10-21' });
-    assert.equal(replay.records, 3);
+    assert.equal(before.od.length, 1);
+    const reload = await loadFromDisk(worker, { directory: dir, now: NOW, prune: false, from: '2026-10-21' });
+    assert.equal(reload.records, 4);
     assert.deepEqual(await rows(worker, 'select id, entries, views, duration_s from gauge_session'), before.sessions);
     assert.deepEqual(await rows(worker, 'select date, sessions, views, entries from gauge_device_day'), before.dd);
     assert.deepEqual(await rows(worker, 'select date, view_name, views, sessions_started from gauge_view_day order by view_name'), before.vd);
+    assert.deepEqual(await rows(worker, 'select date, link_host, clicks from gauge_outbound_day'), before.od);
     assert.deepEqual(await timeline(worker), before.tl, 'FIRST_VISIT and SESSION_START come back too');
   } finally {
     await log.close();
+    await worker.destroyAll();
+  }
+});
+
+test('sessions carry the browser, and outbound clicks roll up per destination host per day', async () => {
+  const { worker } = await createGaugeWorker();
+  try {
+    await loadRecords(
+      worker,
+      [
+        view(0, '/', { browser: 'Safari' }),
+        outbound(1, 'Shop.Example.org'),
+        outbound(2, 'shop.example.org'),
+        outbound(3, 'video.example.net'),
+        view(0, '/', { device_id: 'device-0000002', browser: 'Chrome' })
+      ],
+      { now: NOW }
+    );
+    assert.deepEqual(
+      (await rows(worker, 'select device_id, browser from gauge_session order by device_id')).map((r) => [r.device_id, r.browser]),
+      [['device-0000001', 'Safari'], ['device-0000002', 'Chrome']]
+    );
+    assert.deepEqual(await rows(worker, 'select date, link_host, clicks from gauge_outbound_day order by link_host'), [
+      { date: '2026-10-21', link_host: 'shop.example.org', clicks: 2 },
+      { date: '2026-10-21', link_host: 'video.example.net', clicks: 1 }
+    ]);
+    await loadRecords(worker, [outbound(30, 'shop.example.org')], { now: NOW });
+    assert.equal((await rows(worker, "select clicks from gauge_outbound_day where link_host='shop.example.org'"))[0].clicks, 3, 'later loads add');
+    assert.equal((await rows(worker, 'select count(*) as n from gauge_view_day'))[0].n, 1, 'an outbound click is not a page view');
+  } finally {
+    await worker.destroyAll();
+  }
+});
+
+test('code deployed before `e9gauge install` still loads a database without the 1.1 table and column', async () => {
+  const { worker } = await createGaugeWorker();
+  try {
+    await worker.query('drop table gauge_outbound_day');
+    await worker.query('alter table gauge_session drop column browser');
+    const stats = await loadRecords(worker, [view(0, '/', { browser: 'Safari' }), outbound(1, 'shop.example.org')], { now: NOW });
+    assert.equal(stats.hits, 2);
+    assert.equal((await rows(worker, 'select count(*) as n from gauge_session'))[0].n, 1);
+    const { installGauge } = await import('../lib/install.js');
+    await installGauge(worker);
+    await loadRecords(worker, [outbound(2, 'shop.example.org', { device_id: 'device-0000009' })], { now: NOW });
+    assert.equal((await rows(worker, 'select clicks from gauge_outbound_day'))[0].clicks, 1, 'after install the rollup starts');
+  } finally {
     await worker.destroyAll();
   }
 });

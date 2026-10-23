@@ -1,7 +1,43 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="384" viewBox="0 0 960 384" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
-<rect width="960" height="384" rx="12" fill="#ffffff" stroke="#e5e7eb"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="394" viewBox="0 0 960 394" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+<rect width="960" height="394" rx="12" fill="#ffffff" stroke="#e5e7eb"/>
 <text x="28" y="40" font-size="20" fill="#111827" font-weight="600" text-anchor="start">Known-person activity</text>
 <text x="28" y="62" font-size="13" fill="#6b7280" font-weight="400" text-anchor="start">www.example.org · Sep 21 – Oct 20, 2026</text>
 <text x="932" y="40" font-size="11" fill="#6b7280" font-weight="400" text-anchor="end">sample data</text>
-<text x="28" y="104" font-size="14" fill="#111827" font-weight="600" text-anchor="start">Known-person activity, by entry type (timeline)</text><line x1="28" x2="932" y1="118" y2="118" stroke="#e5e7eb"/><text x="28" y="136" font-size="11" fill="#6b7280" font-weight="600" text-anchor="start">Entry type</text><text x="358" y="136" font-size="11" fill="#6b7280" font-weight="600" text-anchor="start">Entries</text><text x="924" y="136" font-size="11" fill="#6b7280" font-weight="600" text-anchor="end">Distinct people</text><line x1="28" x2="932" y1="144" y2="144" stroke="#e5e7eb"/><text x="28" y="164" font-size="12" fill="#111827" font-weight="400" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">SESSION_START</text><rect x="358" y="153" width="330" height="12" rx="3" fill="#c7d2fe"/><text x="750" y="164" font-size="12" fill="#111827" font-weight="400" text-anchor="end">878</text><text x="924" y="164" font-size="12" fill="#111827" font-weight="400" text-anchor="end">210</text><line x1="28" x2="932" y1="174" y2="174" stroke="#e5e7eb"/><text x="28" y="194" font-size="12" fill="#111827" font-weight="400" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">LOGOUT</text><rect x="358" y="183" width="124.78359908883827" height="12" rx="3" fill="#c7d2fe"/><text x="750" y="194" font-size="12" fill="#111827" font-weight="400" text-anchor="end">332</text><text x="924" y="194" font-size="12" fill="#111827" font-weight="400" text-anchor="end">163</text><line x1="28" x2="932" y1="204" y2="204" stroke="#e5e7eb"/><text x="28" y="224" font-size="12" fill="#111827" font-weight="400" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">CUSTOM_ENTRY</text><rect x="358" y="213" width="113.13211845102505" height="12" rx="3" fill="#c7d2fe"/><text x="750" y="224" font-size="12" fill="#111827" font-weight="400" text-anchor="end">301</text><text x="924" y="224" font-size="12" fill="#111827" font-weight="400" text-anchor="end">133</text><line x1="28" x2="932" y1="234" y2="234" stroke="#e5e7eb"/><text x="28" y="254" font-size="12" fill="#111827" font-weight="400" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">LOGIN</text><rect x="358" y="243" width="78.92938496583145" height="12" rx="3" fill="#c7d2fe"/><text x="750" y="254" font-size="12" fill="#111827" font-weight="400" text-anchor="end">210</text><text x="924" y="254" font-size="12" fill="#111827" font-weight="400" text-anchor="end">210</text><line x1="28" x2="932" y1="264" y2="264" stroke="#e5e7eb"/><text x="28" y="284" font-size="12" fill="#111827" font-weight="400" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">IDENTIFY</text><rect x="358" y="273" width="78.92938496583145" height="12" rx="3" fill="#c7d2fe"/><text x="750" y="284" font-size="12" fill="#111827" font-weight="400" text-anchor="end">210</text><text x="924" y="284" font-size="12" fill="#111827" font-weight="400" text-anchor="end">210</text><line x1="28" x2="932" y1="294" y2="294" stroke="#e5e7eb"/><text x="28" y="314" font-size="12" fill="#111827" font-weight="400" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">FIRST_VISIT</text><rect x="358" y="303" width="78.92938496583145" height="12" rx="3" fill="#c7d2fe"/><text x="750" y="314" font-size="12" fill="#111827" font-weight="400" text-anchor="end">210</text><text x="924" y="314" font-size="12" fill="#111827" font-weight="400" text-anchor="end">210</text><text x="28" y="358" font-size="13" fill="#6b7280" font-weight="400" text-anchor="start">video_upload: 301 uploads by 133 people. The segment clause didCustomEntry { name: "video_upload" } lists them.</text>
+<text x="28" y="104" font-size="14" fill="#111827" font-weight="600" text-anchor="start">Known-person activity, by entry type (timeline)</text>
+<line x1="28" x2="932" y1="118" y2="118" stroke="#e5e7eb"/>
+<text x="28" y="136" font-size="11" fill="#6b7280" font-weight="600" text-anchor="start">Entry type</text>
+<text x="358" y="136" font-size="11" fill="#6b7280" font-weight="600" text-anchor="start">Entries</text>
+<text x="924" y="136" font-size="11" fill="#6b7280" font-weight="600" text-anchor="end">Distinct people</text>
+<line x1="28" x2="932" y1="144" y2="144" stroke="#e5e7eb"/>
+<text x="28" y="164" font-size="12" fill="#111827" font-weight="400" text-anchor="start">SESSION_START</text>
+<rect x="358" y="153" width="330" height="12" rx="3" fill="#c7d2fe"/>
+<text x="750" y="164" font-size="12" fill="#111827" font-weight="400" text-anchor="end">632</text>
+<text x="924" y="164" font-size="12" fill="#111827" font-weight="400" text-anchor="end">189</text>
+<line x1="28" x2="932" y1="174" y2="174" stroke="#e5e7eb"/>
+<text x="28" y="194" font-size="12" fill="#111827" font-weight="400" text-anchor="start">LOGIN</text>
+<rect x="358" y="183" width="242.27848101265823" height="12" rx="3" fill="#c7d2fe"/>
+<text x="750" y="194" font-size="12" fill="#111827" font-weight="400" text-anchor="end">464</text>
+<text x="924" y="194" font-size="12" fill="#111827" font-weight="400" text-anchor="end">176</text>
+<line x1="28" x2="932" y1="204" y2="204" stroke="#e5e7eb"/>
+<text x="28" y="224" font-size="12" fill="#111827" font-weight="400" text-anchor="start">LOGOUT</text>
+<rect x="358" y="213" width="170.74367088607593" height="12" rx="3" fill="#c7d2fe"/>
+<text x="750" y="224" font-size="12" fill="#111827" font-weight="400" text-anchor="end">327</text>
+<text x="924" y="224" font-size="12" fill="#111827" font-weight="400" text-anchor="end">157</text>
+<line x1="28" x2="932" y1="234" y2="234" stroke="#e5e7eb"/>
+<text x="28" y="254" font-size="12" fill="#111827" font-weight="400" text-anchor="start">IDENTIFY</text>
+<rect x="358" y="243" width="98.6867088607595" height="12" rx="3" fill="#c7d2fe"/>
+<text x="750" y="254" font-size="12" fill="#111827" font-weight="400" text-anchor="end">189</text>
+<text x="924" y="254" font-size="12" fill="#111827" font-weight="400" text-anchor="end">189</text>
+<line x1="28" x2="932" y1="264" y2="264" stroke="#e5e7eb"/>
+<text x="28" y="284" font-size="12" fill="#111827" font-weight="400" text-anchor="start">FIRST_VISIT</text>
+<rect x="358" y="273" width="98.6867088607595" height="12" rx="3" fill="#c7d2fe"/>
+<text x="750" y="284" font-size="12" fill="#111827" font-weight="400" text-anchor="end">189</text>
+<text x="924" y="284" font-size="12" fill="#111827" font-weight="400" text-anchor="end">189</text>
+<line x1="28" x2="932" y1="294" y2="294" stroke="#e5e7eb"/>
+<text x="28" y="314" font-size="12" fill="#111827" font-weight="400" text-anchor="start">CUSTOM_ENTRY</text>
+<rect x="358" y="303" width="92.42088607594937" height="12" rx="3" fill="#c7d2fe"/>
+<text x="750" y="314" font-size="12" fill="#111827" font-weight="400" text-anchor="end">177</text>
+<text x="924" y="314" font-size="12" fill="#111827" font-weight="400" text-anchor="end">114</text>
+<line x1="28" x2="932" y1="324" y2="324" stroke="#e5e7eb"/>
+<text x="28" y="372" font-size="13" fill="#6b7280" font-weight="400" text-anchor="start">video_upload: 177 uploads by 114 people. The segment clause didCustomEntry { name: "video_upload" } lists them.</text>
 </svg>
